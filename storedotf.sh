@@ -20,11 +20,11 @@ do
 
 	if [[ $(ls -A $HOME | grep -i $arg | wc -w) -ge 1 ]]
 	then
-		read -r "I'm about to move every file in the home directory that has $arg in its name into the dotfile directory. Is this okay with you? (yes/no)" bool
+		read -p "I'm about to move every file in the home directory that has $arg in its name into the dotfile directory. Is this okay with you? (yes/no) " bool
 		if [[ $bool =~ ^y ]]
 		then 																				# There is probably a way to do this that doesn't look like a hack
 			cd $HOME
-			mv $(ls -A $HOME | grep -i $arg ) -t $arg
+			mv $(ls -A $HOME | grep -i $arg ) -t $DOTFILES/$arg
 			cd $DOTFILES
 		fi
 
