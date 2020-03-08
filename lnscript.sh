@@ -6,7 +6,11 @@
 
 for script in "$@"
 do
-	if [[ ! -e /usr/local/bin/$(basename -s .sh $script) ]]
+	if [[ -d $script ]]
+	then
+		continue
+
+	elif [[ ! -e /usr/local/bin/$(basename -s .sh $script) ]]
 	then
 		read -p "Do you want to link the $script to /usr/local/bin/ ? (yes/no) " reply
 		if [[ $reply =~ ^y ]]
