@@ -28,14 +28,6 @@ do
 			cd $DOTFILES
 		fi
 
-	elif [[ -e $HOME/.${arg}rc ]]
-	then 
-		mv "$HOME/.${arg}rc" "$arg/"
-
-	elif [[ -e $HOME/.${arg}.d ]]
-	then
-		mv "$HOME/.${arg}.d" "$arg/"
-
 	elif [[ -e $HOME/.config/$arg ]];
 	then 
 		mkdir $arg/.config
