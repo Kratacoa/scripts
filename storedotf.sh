@@ -24,14 +24,14 @@ do
 		if [[ $bool =~ ^y ]]
 		then 																				# There is probably a way to do this that doesn't look like a hack
 			cd $HOME
-			mv $(ls -A $HOME | grep -i $arg ) -t $DOTFILES/$arg
+			mv -v $(ls -A $HOME | grep -i $arg ) -t $DOTFILES/$arg
 			cd $DOTFILES
 		fi
 
 	elif [[ -e $HOME/.config/$arg ]];
 	then 
 		mkdir $arg/.config
-		mv "$HOME/.config/$arg"  "$arg/.config/"
+		mv -v "$HOME/.config/$arg"  "$arg/.config/"
 	fi
 
 	stow "$arg"
