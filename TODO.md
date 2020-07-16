@@ -19,6 +19,9 @@
 	- adding it to calcurse and use its entries to send notifications
 	- make a text file as a database in `~/.local/share` and use it for the reminders
 
+## manageDotfiles
+- fzf that somehow opens the relevant rc on the left side with the `$EDITOR` and `TODO` on the right
+ 
 # Improve 
 
 - Explicit the relevant dependencies for each script
@@ -32,5 +35,4 @@
 ## fzat
 - Introduce an environment variable (e.g. DOCS_DIR) to let `fzat` know where to look, and let it be the home directory by default
 - Learn if there is a better to look up for files with certain extensions via fzf
-
 
