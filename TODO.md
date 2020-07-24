@@ -40,7 +40,7 @@
 - Maybe make it into a hook somehow; `man trap`?
 
 ## googleDNS
-- Add a hook that activates the "off" part of the script after a certain period of inactivity
+- MAYBE add a hook that send a notification after a certain amount of time that the script has been and `resolv.conf.head` is still alive and well
 
 ## fzat
 - Introduce an environment variable (e.g. DOCS_DIR) to let `fzat` know where to look, and let it be the home directory by default
