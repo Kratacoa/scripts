@@ -21,7 +21,7 @@
 ## sshPull
 - enter a machine over ssh, open its contents with `$FILE_MANAGER` (or `fzf`) and send back the marked files (directories included) to the chosen directory, on a certain trigger. Iterate till execution of a certain keybind.
 
-## sshCommand
+## sendCommand
 - send a command to execute in the first (or maybe specify it somehow) active X session of a given user
 
 ## manageDotfiles
@@ -31,6 +31,9 @@
 ## gitExplorer
 - store an index of git repositories on PC and by going over them with `fzf` allow to execute git commands as if inside those directories; could also be done over with `lf` I suppose, somehow
 - use [Glow](https://github.com/charmbracelet/glow) for markdown rendering
+
+## editCommand
+- given a shell line, figure out how to open it in the `$EDITOR` and throw out its buffer as the command to execute
   
 # Improve 
 
