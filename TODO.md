@@ -5,8 +5,6 @@
 
 ## backup
 - backup important data; perhaps make some of it torrent-available too or something like that
-## markdown2org
-- script/hook for Emacs that converts markdown into org syntax when opening a .md file, and turns back into markdown when saving
 
 ## indexTODO
 - hook that makes and updates a directory with symbolic links and appropriate names in `~/notes` based on the `TODO.md` file
@@ -27,14 +25,12 @@
 ## manageDotfiles
 - `fzf` that somehow opens the relevant rc on the left side with the `$EDITOR` and `TODO` on the right
 - use [Glow](https://github.com/charmbracelet/glow) for markdown rendering
+- maybe I should just [dotbare](https://github.com/kazhala/dotbare)
  
 ## gitExplorer
 - store an index of git repositories on PC and by going over them with `fzf` allow to execute git commands as if inside those directories; could also be done over with `lf` I suppose, somehow
 - use [Glow](https://github.com/charmbracelet/glow) for markdown rendering
 
-## editCommand
-- given a shell line, figure out how to open it in the `$EDITOR` and throw out its buffer as the command to execute
-  
 # Improve 
 
 - Explicit the relevant dependencies for each script
@@ -46,6 +42,7 @@
 - MAYBE add a hook that send a notification after a certain amount of time that the script has been and `resolv.conf.head` is still alive and well
 
 ## fzat
+- If it gets slow, substitute `tree` with `find`. Maybe do it anyway, sometime in the future
 - Introduce an environment variable (e.g. DOCS_DIR) to let `fzat` know where to look, and let it be the home directory by default
 - Learn if there is a better to look up for files with certain extensions via fzf
 - If executed from the 1st window, make it open the file on the closest available window, scrolling to the right and switch to it
