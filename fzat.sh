@@ -6,4 +6,4 @@
 
 reader=${READER:-zathura}
 dir=${DOCUMENTS_DIR:-$HOME}
-find $dir -regextype egrep -regex '.+pdf|.+djvu|.+epub' -printf "\"%p\"\n" | fzf --multi |  setsid -f xargs -r "$reader" || printf '\e[1;31m%s\e[0m' "Something went wrong"
+find $dir -type f -regextype egrep -regex '.+pdf|.+djvu|.+epub' -printf "\"%p\"\n" | fzf --multi |  setsid -f xargs -r "$reader" || printf '\e[1;31m%s\e[0m' "Something went wrong!"
