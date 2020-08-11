@@ -6,7 +6,7 @@ for script in "$@"
 do
 	if [[ -f $script ]] && [[ ! -e $HOME/.local/bin/$(basename -s .sh $script) ]]; then
 		read -p "Do you want to link the $script to $HOME/.local/bin/ ? (yes/no) " reply
-		[[ $reply =~ ^y ]] && chmod +x $script && ln -s $(readlink -f $script) $HOME/.local/bin/$(basename -s .sh $script)
+		[[ $reply =~ ^y ]] && chmod +wx $script && ln -s $(readlink -f $script) $HOME/.local/bin/$(basename -s .sh $script)
 	else
 		echo "$script is either not a regular file or is already present in $HOME/.local/bin"
 	fi

@@ -1,38 +1,23 @@
 #!/bin/bash
 
 # Prepares the files to be managed by GNU Stow, by moving them into the dotfiles directory and symlinking the stuff
-# It supports multiple arguments
-# Change the dotfiles directory to your liking
+# Set the environment variable DOTFILES_DIR or edit the script if $HOME/dotfiles is not your default directory
+# DEPENDENCIES: fzf, bash
 
-DOTFILES=$HOME/.dotfiles/
+dotfiles=${DOTFILES_DIR:-$HOME/dotfiles/}
+tmpfile="$HOME/.cache/storedotf-result"
 
-if [[ $# -eq 0 ]]
-then
-	echo "Provide an argument, pretty please"
-	exit 1
-fi
-
-cd $DOTFILES
-
-for arg in "$@"
-do 
-	mkdir $DOTFILES/$arg
-
-	if [[ $(ls -A $HOME | grep -i $arg | wc -w) -ge 1 ]]
-	then
-		read -p "I'm about to move every file in the home directory that has $arg in its name into the dotfile directory. Is this okay with you? (yes/no) " bool
-		if [[ $bool =~ ^y ]]
-		then 																				# There is probably a way to do this that doesn't look like a hack
-			cd $HOME
-			mv -v $(ls -A $HOME | grep -i $arg ) -t $DOTFILES/$arg
-			cd $DOTFILES
-		fi
-
-	elif [[ -e $HOME/.config/$arg ]];
-	then 
-		mkdir $arg/.config
-		mv -v "$HOME/.config/$arg"  "$arg/.config/"
-	fi
-
-	stow "$arg"
+[[ $# -eq 0 ]] && echo "Provide an argument, pretty please" && exit 1
+touch $tmpfile
+for argument in "$@"; do
+    find $HOME \( -type f -path "*/.$argument*" \) -or \( -type d -iname "*$argument*" \) > $tmpfile
+    cat $tmpfile && printf "\n%s\n" "The directories above are going to be moved inside $dotfiles ."
+    read -n1 -p 'Input "no" if you want to choose which ones to move, "yes" if you want to move them all (y/n)' reply
+    case "$reply" in
+    	y)	mv $(cat "$tmpfile" | tr '\n' ' ') -t $dotfiles
+    	;;
+    	*)	cat "$tmpfile" | fzf --multi --preview-window=:wrap --preview='echo -e "Press Tab if you want to choose a directory\nPress Return when done" && echo -e "\nThe full path is:\n{}"'| xargs -r mv -t $dotfiles
+    	;;
+	esac
 done
+rm "$tmpfile"
