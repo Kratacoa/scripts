@@ -31,6 +31,9 @@
 - store an index of git repositories on PC and by going over them with `fzf` allow to execute git commands as if inside those directories; could also be done over with `lf` I suppose, somehow
 - use [Glow](https://github.com/charmbracelet/glow) for markdown rendering
 
+## xbpsUpdate
+- check if there are any updates to the packages
+
 # Improve 
 
 - Explicit the relevant dependencies for each script
