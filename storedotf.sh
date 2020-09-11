@@ -11,13 +11,13 @@ tmpfile="$HOME/.cache/storedotf-result"
 touch $tmpfile
 for argument in "$@"; do
     find $HOME \( -type f -path "*/.$argument*" \) -or \( -type d -iname "*$argument*" \) > $tmpfile
-    cat $tmpfile && printf "\n%s\n" "The directories above are going to be moved inside $dotfiles ."
-    read -n1 -p 'Input "no" if you want to choose which ones to move, "yes" if you want to move them all (y/n)' reply
+    cat $tmpfile && printf "\n%s\n" "The directories above are going to be moved inside $dotfiles "
+    read -n1 -p 'Input "no" if you want to choose which ones to move, "yes" if you want to move them all (y/n) ' reply
     case "$reply" in
     	y)	mv $(cat "$tmpfile" | tr '\n' ' ') -t $dotfiles
     	;;
     	*)	cat "$tmpfile" | fzf --multi --preview-window=:wrap --preview='echo -e "Press Tab if you want to choose a directory\nPress Return when done" && echo -e "\nThe full path is:\n{}"'| xargs -r mv -t $dotfiles
     	;;
-	esac
+    esac
 done
 rm "$tmpfile"
