@@ -12,9 +12,15 @@
 	## indexTODO
 - hook that makes and updates a directory with symbolic links and appropriate names in `~/notes` based on the `TODO.md` file
 
+## fzf-grep
+- Search in a given directory for a regexp, and then send the output files to `fzf`. Preview the lines found in the given file in `fzf`. Open the file with an editor
+
 ## gitExplorer
 - store an index of git repositories on PC and by going over them with `fzf` allow to execute git commands as if inside those directories; could also be done over with `lf` I suppose, somehow
 - use [Glow](https://github.com/charmbracelet/glow) for markdown rendering
+
+## imageEdit
+- Interactive script for displaying the result of `imagemagick` arguments, output into an image viewer (such as `sxiv`)
 
 ## manQuery
 - Open a manpage for the program in the current window
@@ -58,6 +64,7 @@
 - Add `-i` option for input and `-o` option for output
 
 ## fzat
+- Show only the filenames and parent directory instead of full path
 - Checks for poorly formatted filenames
 - Add an option (`-d` ?) to set the directory
 - Add support for chosen directories?
@@ -69,6 +76,7 @@
 - Find out if a preview can be added comfortably via fzf for some pager
 - Add support for xdg-open
 - Add restricted selections (for scripts, used configs, backup configs)
+- Remove `.backup` from selections
 - Generalise it?
 - check out how [dotbare](https://github.com/kazhala/dotbare) works
 
