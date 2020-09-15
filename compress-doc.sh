@@ -7,9 +7,7 @@
 
 file_without_ext="$(basename -s .pdf "$1")"
 if file --mime-type "$1" | grep -iq pdf; then
-    pdf2ps "$1" "$file_without_ext".ps && \
-    ps2pdf "$file_without_ext".ps "$file_without_ext"-compressed.pdf
-    rm "$file_without_ext".ps
+	ps2pdf "$1" "$(basename -s pdf. "$1")"-compressed.pdf
 else
 	printf "%s\n" "Only PDF files are supported at this time."
 fi
