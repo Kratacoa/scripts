@@ -1,6 +1,6 @@
 #!/bin/sh
 # Compress jpg images according to Google's recommended standards on https://developers.google.com/speed/docs/insights/OptimizeImages
-# Dependencies: imagemagick
+# DEPENDENCIES: imagemagick
 
 for i in "$@"; do
     if file --mime-type "$i" | grep -iq jpeg; then
