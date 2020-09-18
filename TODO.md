@@ -51,6 +51,9 @@
 ## timer
 - figure out how to send a notification once a certain amount of time has passed, or a certain time is reached; I think they're analoguous, but I'm not sure
 
+## update-readme
+- sed out the comments from the scripts and add them to the README, formatted accordingly
+
 ## xbpsUpdate
 - check if there are any updates to the packages
 - insert a check for new linux release (since it doesn't upgrade by default to the next release)
@@ -73,6 +76,7 @@
 ## fdot
 - Add an option (`-d` ?) to set the directory
 - Add a binding to create a file in the chosen directory
+- Add a binding to `cd` into the directory of the currently selected path
 - Find out if a preview can be added comfortably via fzf for some pager
 - Add support for xdg-open
 - Add restricted selections (for scripts, used configs, backup configs)
@@ -91,7 +95,6 @@
 - Use bash facilities for temporary files
 - Add an option (`-d` ?) to set the directory
 - Find a universal way to change `fzf` with an editor
-- Fix the paths not being stored properly
 
 # sync_dir
 - Add `-o` option for output directories, `-i` for input dir
