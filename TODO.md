@@ -61,6 +61,7 @@
 # Improve 
 
 - Explicit the relevant dependencies for each script
+- Follow the [styleguide from Google](https://google.github.io/styleguide/shellguide.html)
  
 ## backup_encrypt_dir.sh
 - Remove old backups on the receiving end as well
@@ -90,6 +91,9 @@
 ## lnscript
 - Maybe make it into a hook somehow; `man trap`?
 - Not sure if it is appropriate to automatically give scripts writing permissions, whatev
+
+## screenshot
+- Add option to select a region and screenshot that
 
 # storedotf
 - Use bash facilities for temporary files

@@ -21,6 +21,11 @@ else
 	echo -e "The output of /etc/resolv.conf.head is \n"
 	cat /etc/resolv.conf.head && echo ""
 	read -n 1 -p "/etc/resolv.conf.head is going to be removed; if you want to proceed, type (y)es " reply && echo ""
- 	[ $reply = "Y" -o $reply = "y" ] && rm /etc/resolv.conf.head && sv reload wpa_supplicant 1> /dev/null && sv reload dhcpcd 1> /dev/null && exit 0
+ 	if [ $reply = "y" ] || [ $reply = "Y" ]; then
+     	rm /etc/resolv.conf.head &&
+     	sv reload wpa_supplicant 1> /dev/null &&
+     	sv reload dhcpcd 1> /dev/null &&
+     	exit 0
+    fi
 	echo "The reply is not (y)es, or something else went wrong" && exit 1
 fi
