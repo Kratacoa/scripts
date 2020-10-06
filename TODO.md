@@ -98,7 +98,8 @@
 # storedotf
 - Use bash facilities for temporary files
 - Add an option (`-d` ?) to set the directory
-- Find a universal way to change `fzf` with an editor
+- Make it check whether the configs are already stowed, before asking for the check
+- Ask to remove configs in place
 
 # sync_dir
 - Add `-o` option for output directories, `-i` for input dir
