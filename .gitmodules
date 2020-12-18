@@ -1,3 +1,6 @@
 [submodule "remarkableScripts"]
 	path = remarkableScripts
 	url = https://github.com/reHackable/scripts
+[submodule "rmview"]
+	path = rmview
+	url = https://github.com/bordaigorl/rmview
