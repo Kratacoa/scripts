@@ -64,6 +64,8 @@
 - Follow the [styleguide from Google](https://google.github.io/styleguide/shellguide.html)
  
 ## backup_encrypt_dir.sh
+- Make test that iterates over all variables
+- Make it optional to rsync, add it as an option
 - Remove old backups on the receiving end as well
 - Add `-i` option for input and `-o` option for output
 
