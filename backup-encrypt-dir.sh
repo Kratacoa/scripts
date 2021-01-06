@@ -1,15 +1,15 @@
 #!/bin/bash
 
 directory=
+backup_destination=
+backup_source="$HOME"/"$directory"
 filename="$directory"_"$(date +%Y_%m_%d)"
 current_directory="$(pwd)"
-backup_source="$HOME"/"$directory"
-backup_destination=
 old_backup=$(grep -i "$(basename "$filename")" "$backup_destination"/*)
 # In case you want to also sync it with another device via rsync
 # receiver=
 
-test -z "$directory" &&
+test -z "$backup_source" &&
 printf "%s" "You gotta tell me what's the directory to backup, come on" &&
 exit 1
 
