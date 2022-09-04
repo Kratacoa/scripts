@@ -15,15 +15,28 @@
 ## fzf-grep
 - Search in a given directory for a regexp, and then send the output files to `fzf`. Preview the lines found in the given file in `fzf`. Open the file with an editor
 
+## fzf-keyboard
+- Search for a keyboard layout and set it; preferably there should be a way to highlight certain layouts as "standard"
+- Can be done with either fzf or rofi
+ 
+## fzf-video
+- Search for all the filenames with video extensions, and open them up with mpv
+
 ## gitExplorer
 - store an index of git repositories on PC and by going over them with `fzf` allow to execute git commands as if inside those directories; could also be done over with `lf` I suppose, somehow
 - use [Glow](https://github.com/charmbracelet/glow) for markdown rendering
+
+## grepEdit
+- use `grep` or similar software with its own syntax and then confirm whether you want to open the files within the results with your `$EDITOR` (or edit the selection)
 
 ## imageEdit
 - Interactive script for displaying the result of `imagemagick` arguments, output into an image viewer (such as `sxiv`)
 
 ## manQuery
 - Open a manpage for the program in the current window
+
+## pathUpdate
+- Check whether the path corresponds to a file, and if not, pass the path to `fzf` and let the user choose how to replace it
 
 ## pdfGrep
 - Check for certain strings or regular expressions inside formats like pdf, djvu and epub; may exist already, otherwise it may be doable with standard `grep` and `pdftotext` (or other such tools), but not sure how fast that would be
@@ -50,6 +63,9 @@
 
 ## timer
 - figure out how to send a notification once a certain amount of time has passed, or a certain time is reached; I think they're analoguous, but I'm not sure
+
+## turns
+- generate tables for turns in household chores
 
 ## update-readme
 - sed out the comments from the scripts and add them to the README, formatted accordingly
@@ -96,12 +112,16 @@
 
 ## screenshot
 - Add option to select a region and screenshot that
+- Add notification with data about the screenshot (name, time, size, resolution)
 
 # storedotf
 - Use bash facilities for temporary files
 - Add an option (`-d` ?) to set the directory
 - Make it check whether the configs are already stowed, before asking for the check
 - Ask to remove configs in place
+
+# stowdotf
+- do not ask for stuff that is already stowed as it should be
 
 # sync_dir
 - Add `-o` option for output directories, `-i` for input dir

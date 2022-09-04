@@ -9,8 +9,9 @@ list=$(find "$dotfiles_dir" -maxdepth 1 ! -path . -type d | sed '1d')
 if cd "$dotfiles_dir"; then
     for i in $list; do
         dir=$(basename "$i")
-        printf "%s" "If you want to stow $dir, press (y)es, otherwise something else "
+        printf "\n%s" "If you want to stow $dir, press (y)es, otherwise something else "
         reply=$(read -n 1)
+
         if [ "$reply" = "y" -o "$reply" = "Y" ]; then
             stow --verbose --target="$HOME" -S "$dir"
         fi
