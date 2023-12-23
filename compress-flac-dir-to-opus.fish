@@ -6,7 +6,7 @@
 # https://wiki.hydrogenaud.io/index.php?title=Opus
 
 for directory in (ls -d *);
-  if find . $directory -type f -name "*flac" -print -quit > /dev/null 2>&1
+  if find $directory -type f -name "*flac" -print -quit > /dev/null 2>&1
     cd $directory
     # TODO: basename on {} doesn't work :((( Don't know how to properly tri mthe file extension
     find . -type f -name "*.flac" -exec \
